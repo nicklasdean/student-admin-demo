@@ -30,6 +30,6 @@ public class StudentController {
     @GetMapping("/student")
     @ResponseBody
     public String getStudentByParameter(@RequestParam String id) {
-        return "Id: 1 First name: Nicklas Last name: Frederiksen Enrollment date: Thu Jan 01 01:00:12 CET 1970 cpr:150988-321";
+        return "Just a string in the body";
     }
 }
