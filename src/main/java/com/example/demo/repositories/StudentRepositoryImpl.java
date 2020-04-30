@@ -51,7 +51,7 @@ public class StudentRepositoryImpl implements IStudentRepository {
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
                 Student tempStudent = new Student();
-                tempStudent.setCpr(String.valueOf(rs.getInt(1)));
+                tempStudent.setId(rs.getInt(1));
                 tempStudent.setFirstName(rs.getString(2));
                 tempStudent.setLastName(rs.getString(3));
                 tempStudent.setEnrollmentDate(rs.getDate(4));
