@@ -15,6 +15,10 @@ public class InMemoryStudentRepositoryImpl implements IStudentRepository{
                 Arrays.asList(
                         new Student(1, "Nicklas","Frederiksen", new Date(12312), "31134115-1231"),
                         new Student(2, "Bent","Karlsen", new Date(2141241), "31134115-4112"),
+                        new Student(3, "Bob","Alicesen",new Date(12424141), "233124f14-5551"),
+                        new Student(3, "Bob","Alicesen",new Date(12424141), "233124f14-5551"),
+                        new Student(3, "Bob","Alicesen",new Date(12424141), "233124f14-5551"),
+                        new Student(3, "Bob","Alicesen",new Date(12424141), "233124f14-5551"),
                         new Student(3, "Bob","Alicesen",new Date(12424141), "233124f14-5551")
                 )
         );
@@ -37,7 +41,7 @@ public class InMemoryStudentRepositoryImpl implements IStudentRepository{
 
     @Override
     public List<Student> readAll() {
-        return null;
+        return inMemoryDatabase;
     }
 
     @Override

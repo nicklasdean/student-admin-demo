@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Student Administration</title>
@@ -19,26 +19,34 @@
                 <th>Enrollment</th>
                 <th>Edit</th>
             </tr>
+            <tr th:each="student : ${students}">
+                <td th:text="${student.firstName}"></td>
+                <td th:text="${student.lastName}"></td>
+                <td th:text="${student.enrollmentDate}"></td>
+                <td><a th:href="@{/student(id=${student.id})}"><button>Details</button></a></td>
+            </tr>
+
+            <!--
             <tr>
                 <td>Jill</td>
                 <td>Smith</td>
                 <td>19/5-2020</td>
-                <button>click me</button>
+                <td><button>click me</button></td>
             </tr>
             <tr>
                 <td>Eve</td>
                 <td>Jackson</td>
                 <td>11/6-2013</td>
-                <button>click me</button>
+                <td><button>click me</button></td>
 
             </tr>
             <tr>
                 <td>Karl</td>
                 <td>Marx</td>
                 <td>11/6-2013</td>
-                <button>click me</button>
-
+                <td><button>click me</button></td>
             </tr>
+            -->
         </table>
     </div>
 </body>

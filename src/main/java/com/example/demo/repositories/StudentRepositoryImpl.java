@@ -30,7 +30,7 @@ public class StudentRepositoryImpl implements IStudentRepository {
             ResultSet rs = getSingleStudent.executeQuery();
             while(rs.next()){
                 studentToReturn = new Student();
-                studentToReturn.setCpr(String.valueOf(rs.getInt(1)));
+                studentToReturn.setId(rs.getInt(1));
                 studentToReturn.setFirstName(rs.getString(2));
                 studentToReturn.setLastName(rs.getString(3));
                 studentToReturn.setEnrollmentDate(rs.getDate(4));
