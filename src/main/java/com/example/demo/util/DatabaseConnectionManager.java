@@ -17,22 +17,31 @@ public class DatabaseConnectionManager {
     public static Connection getDatabaseConnection() {
         if(conn != null) return conn;
 
+        FileInputStream propertyFile = null;
         Properties prop = new Properties();
         try {
-            FileInputStream propertyFile = new FileInputStream("src/main/resources/application.properties");
+            propertyFile = new FileInputStream("src/main/resources/application.properties");
             prop.load(propertyFile);
             user = prop.getProperty("db.user");
             password = prop.getProperty("db.password");
             url = prop.getProperty("db.url");
+
         }
         catch(FileNotFoundException e){
             System.out.println("File could not be found");
-            e.printStackTrace();
         }
         catch(IOException e){
             System.out.println("Property could not be loaded");
-            e.printStackTrace();
         }
+
+        finally {
+            try {
+                propertyFile.close();
+            } catch (IOException e) {
+                System.out.println("Property could not be found");
+            }
+        }
+
         try {
             conn = DriverManager.getConnection(url, user, password);
         }
